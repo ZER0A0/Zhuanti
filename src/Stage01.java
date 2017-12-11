@@ -31,7 +31,7 @@ public class Stage01 extends JFrame {
     private JLabel jlbHat = new JLabel(Hat);
     private int Haw , Hah , Hatime , Halock = 0;
 
-    private Timer t1 , t2 , t3 , t4;
+    private Timer t1 , t2 , t3 , t4 , t5 , t6;
 
     private int sw = getToolkit().getScreenSize().width;
     private int sh = getToolkit().getScreenSize().height;
@@ -82,6 +82,22 @@ public class Stage01 extends JFrame {
                 if(Hatime == 20){t4.stop() ; jlbHat.setVisible(false) ; Halock = 0;}
             }
         });
+        t5 = new Timer(50, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jlbHat.setBounds(Haw -= 40 , Hah , 85 , 28);
+                Hatime += 1;
+                if(Hatime == 10){t5.stop() ; t6.start();}
+            }
+        });
+        t6 = new Timer(50, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jlbHat.setBounds(Haw += 40 , Hah , 85 , 28);
+                Hatime += 1;
+                if(Hatime == 20){t6.stop() ; jlbHat.setVisible(false) ; Halock = 0;}
+            }
+        });
 
         this.addKeyListener(new KeyMonitor());
     }
@@ -118,11 +134,12 @@ public class Stage01 extends JFrame {
                     break;
                 case KeyEvent.VK_Z :
                     if(Halock == 0){
-                    Haw = Chw + 120 ; Hah = Chh + 60;
+                    if(direction == 0){t3.start() ; Haw = Chw + 120;}
+                    else if(direction == 1){t5.start() ; Haw = Chw;}
+                    Hah = Chh + 60;
                     jlbHat.setBounds(Haw , Hah , 85 , 28);
                     jlbHat.setVisible(true);
                     Hatime = 0;
-                    t3.start();
                     Halock = 1;
                     if(direction == 0 && jlock == 0){jlbCharacter.setIcon(Character_RA);}
                     else if(direction == 1 && jlock == 0){jlbCharacter.setIcon(Character_LA);}
@@ -130,5 +147,4 @@ public class Stage01 extends JFrame {
             }
         }
     }
-    public void Timet1s(ActionEvent e){}
 }
