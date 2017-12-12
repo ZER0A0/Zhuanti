@@ -50,6 +50,7 @@ public class Stage01 extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setBounds(sw / 2 - fw / 2, sh / 2 - fh / 2, fw, fh);
         this.setLayout(null);
+        this.setTitle("請輸入標題");
 
         jlbCharacter.setBounds(Chw, Chh, 200, 200);
         this.add(jlbCharacter);

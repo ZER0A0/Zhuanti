@@ -23,6 +23,7 @@ public class MainFrame extends JFrame{
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setBounds(sw / 2 - fw / 2 , sh / 2 - fh / 2 , fw , fh);
         this.setLayout(null);
+        this.setTitle("請輸入標題");
 
         jlbStart.setBounds(fw / 2 - 250 , fh / 2 + 50 , 200 , 100);
         jlbExit.setBounds(fw / 2 + 50, fh / 2 + 50 , 200 , 100);
