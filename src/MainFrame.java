@@ -7,7 +7,7 @@ public class MainFrame extends JFrame{
     public MainFrame(){
         initComp();
     }
-    private ImageIcon Hat = new ImageIcon("D:\\Download\\GitHub\\Zhuanti\\Image\\Hat.png");
+    private ImageIcon Hat = new ImageIcon("C:\\Users\\USER\\Desktop\\github\\Zhuanti\\Image\\Hat.png");
 
     private JLabel jlbStart = new JLabel("Start",JLabel.CENTER);
     private JLabel jlbExit = new JLabel("Exit",JLabel.CENTER);
